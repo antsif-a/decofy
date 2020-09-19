@@ -2,9 +2,9 @@ import { Command, CommandOptions } from '../bot/commands';
 import { Initializable } from '../bot/interfaces';
 import { Bot } from '../bot';
 
-export class Annotations {
+export class Decorators {
     static bot(prefix: string): ClassDecorator {
-        return (target: Object) => {
+        return (target: unknown) => {
             if (this.isBot(target)) {
                 const bot = target as Bot;
                 this.checkInitialization(bot);
@@ -17,7 +17,7 @@ export class Annotations {
     }
 
     static command(options: CommandOptions = {}): MethodDecorator {
-        return (target: Object, key: string, descriptor: PropertyDescriptor) => {
+        return (target: unknown, key: string, descriptor: PropertyDescriptor) => {
             if (this.isBot(target)) {
                 const bot = target as Bot;
                 this.checkInitialization(bot);
@@ -37,7 +37,7 @@ export class Annotations {
         if (!target.isInitialized) target.initialize();
     }
 
-    private static isBot(target: Object): boolean {
-        return (target instanceof Bot);
+    private static isBot(target: unknown): boolean {
+        return target instanceof Bot;
     }
 }

@@ -1,1 +1,1 @@
-export * from './Annotations';
+export * from './Decorators';

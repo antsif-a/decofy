@@ -1,10 +1,9 @@
 import { Client } from 'discord.js';
 import { Commands } from './commands';
-import { Annotations } from '../annotations';
 import { Controller, Initializable } from './interfaces';
 
-export class Bot implements Controller, Initializable {
-    isInitialized: boolean = false;
+export abstract class Bot implements Controller, Initializable {
+    isInitialized = false;
     client: Client;
     commands: Commands;
 
@@ -14,10 +13,9 @@ export class Bot implements Controller, Initializable {
         console.log('Constructor executed.');
     }
 
-    initialize() {
+    initialize(): void {
         this.client = new Client();
         this.commands = new Commands(this.client);
-
         this.isInitialized = true;
 
         console.log('Init() executed.');

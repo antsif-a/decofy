@@ -1,5 +1,5 @@
-import { Command } from '.';
 import { Client, Message } from 'discord.js';
+import { Command } from './Command';
 
 export class Commands {
     private readonly client: Client;
@@ -30,8 +30,8 @@ export class Commands {
     }
 
     find(name: string): Command | null {
-        const command = this.commands.find(c => c.name === name);
-        return command ? command : null;
+        const command = this.commands.find((c) => c.name === name);
+        return command || null;
     }
 
     all(): Command[] {

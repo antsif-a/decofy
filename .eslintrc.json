@@ -20,6 +20,13 @@
     "rules": {
         "no-console": "off",
         "linebreak-style": "off",
-        "@typescript-eslint/indent": "off"
+        "no-void": ["error", {
+            "allowAsStatement": true
+        }],
+        "@typescript-eslint/lines-between-class-members": ["error", "always", {
+            "exceptAfterSingleLine": true
+        }],
+        "@typescript-eslint/indent": "off",
+        "import/prefer-default-export": "off"
     }
 }
