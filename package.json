@@ -7,6 +7,9 @@
         "url": "https://github.com/summetdev",
         "email": "summet.dev@gmail.com"
     },
+    "scripts": {
+        "eslint": "eslint"
+    },
     "license": "MIT",
     "dependencies": {
         "discord.js": "^12.3.1"
