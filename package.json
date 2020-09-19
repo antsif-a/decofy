@@ -1,6 +1,6 @@
 {
-    "name": "disannotate",
-    "description": "Create your own Discord bot using TypeScript annotations!",
+    "name": "discord-decorate",
+    "description": "Create your own Discord bot using TypeScript decorators!",
     "version": "1.0.0",
     "author": {
         "name": "Andrew Antsiferov",
