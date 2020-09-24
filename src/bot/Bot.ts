@@ -9,16 +9,12 @@ export abstract class Bot implements Controller {
 
     constructor(token: string) {
         void this.client.login(token);
-
-        console.log('Constructor executed.');
     }
 
     initialize(): void {
         this.client = new Client();
         this.commands = new Commands(this.client);
         this.isInitialized = true;
-
-        console.log('Init() executed.');
     }
 
     protected static bot(prefix: string): ClassDecorator {
@@ -26,8 +22,6 @@ export abstract class Bot implements Controller {
             if (this.isController(target)) {
                 this.checkInitialization(target);
                 target.commands.setPrefix(prefix);
-
-                console.log('@Bot.bot() executed.');
             }
         };
     }
@@ -42,8 +36,6 @@ export abstract class Bot implements Controller {
                 command.executor ||= descriptor.value;
 
                 target.commands.add(command);
-
-                console.log(`@Bot.command() new command: ${command.name}.`);
             }
         };
     }
