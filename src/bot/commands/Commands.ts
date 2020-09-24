@@ -11,7 +11,6 @@ export class Commands {
         this.commands = [];
 
         this.client.on('message', (message) => this.handle(message));
-        this.client.on('ready', () => console.log('Ready: Triggered.'));
     }
 
     private handle(message: Message): void {

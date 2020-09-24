@@ -28,13 +28,13 @@ export class Command {
     }
 
     checkPermissions(member: GuildMember): boolean {
-        // for (const permission of this.permissions) {
-        //     if (!member.hasPermission(permission)) {
-        //         return false;
-        //     }
-        // }
+        for (const permission of this.permissions) {
+            if (!member.hasPermission(permission)) {
+                return false;
+            }
+        }
 
-        return this.permissions.map((p) => !member.hasPermission(p)).length !== 0;
+        return true;
     }
 
     execute(message: Message, ...args: string[]): void {
