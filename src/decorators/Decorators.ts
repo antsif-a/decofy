@@ -1,32 +1,28 @@
 import { Command, CommandOptions } from '../bot/commands';
-import { Initializable } from '../bot/interfaces';
-import { Bot } from '../bot';
+import { Controller, Initializable } from '../bot/interfaces';
 
 export class Decorators {
-    static bot(prefix: string): ClassDecorator {
+    protected static bot(prefix: string): ClassDecorator {
         return (target: unknown) => {
-            if (this.isBot(target)) {
-                const bot = target as Bot;
-                this.checkInitialization(bot);
-
-                bot.commands.setPrefix(prefix);
+            if (this.isController(target)) {
+                this.checkInitialization(target);
+                target.commands.setPrefix(prefix);
 
                 console.log('@Bot.bot() executed.');
             }
         };
     }
 
-    static command(options: CommandOptions = {}): MethodDecorator {
+    protected static command(options: CommandOptions = {}): MethodDecorator {
         return (target: unknown, key: string, descriptor: PropertyDescriptor) => {
-            if (this.isBot(target)) {
-                const bot = target as Bot;
-                this.checkInitialization(bot);
+            if (this.isController(target)) {
+                this.checkInitialization(target);
 
                 const command = new Command(options);
                 command.name ||= key;
                 command.executor ||= descriptor.value;
 
-                bot.commands.add(command);
+                target.commands.add(command);
 
                 console.log(`@Bot.command() new command: ${command.name}.`);
             }
@@ -37,7 +33,7 @@ export class Decorators {
         if (!target.isInitialized) target.initialize();
     }
 
-    private static isBot(target: unknown): boolean {
-        return target instanceof Bot;
+    private static isController(target: unknown): target is Controller {
+        return (target as Controller).client !== undefined;
     }
 }
