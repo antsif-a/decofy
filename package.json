@@ -8,6 +8,7 @@
         "email": "summet.dev@gmail.com"
     },
     "scripts": {
+        "test": "tsc && node dist/examples",
         "eslint": "eslint -c .eslintrc.json --ext .ts ./src"
     },
     "license": "MIT",
