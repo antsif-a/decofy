@@ -21,4 +21,4 @@ class MyBot extends Bot {
     }
 }
 
- new MyBot('NzQ4NDg2MTY5MTUwNjE5Nzgw.X0eIEA.HG2VGzlzc1qIywh_3oAqQWCSa-M');
+ new MyBot('token');
