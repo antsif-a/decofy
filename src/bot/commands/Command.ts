@@ -28,6 +28,7 @@ export class Command {
     }
 
     checkPermissions(member: GuildMember): boolean {
+        // TODO: Do it without for-of loop
         for (const permission of this.permissions) {
             if (!member.hasPermission(permission)) {
                 return false;

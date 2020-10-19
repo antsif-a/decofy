@@ -1,13 +1,11 @@
 import { Client, ClientEvents } from 'discord.js';
-import { Command, CommandOptions, Commands } from './commands';
-import { Controller, Initializable } from './interfaces';
+import { CommandOptions, Commands } from './commands';
+import { Controller } from './core';
+import { botDecorator, commandDecorator, eventDecorator } from '../decorators';
 
-export abstract class Bot implements Controller {
-    isInitialized = false;
-    client: Client;
-    commands: Commands;
-
+export abstract class Bot extends Controller {
     constructor(token: string) {
+        super();
         void this.client.login(token);
     }
 
@@ -18,42 +16,14 @@ export abstract class Bot implements Controller {
     }
 
     protected static bot(prefix: string): ClassDecorator {
-        return (target: unknown) => {
-            if (this.isController(target)) {
-                this.checkInitialization(target);
-                target.commands.setPrefix(prefix);
-            }
-        };
+        return botDecorator(prefix) as ClassDecorator;
     }
 
     protected static command(options: CommandOptions = {}): MethodDecorator {
-        return (target: unknown, key: string, descriptor: PropertyDescriptor) => {
-            if (this.isController(target)) {
-                this.checkInitialization(target);
-
-                const command = new Command(options);
-                command.name ||= key;
-                command.executor ||= descriptor.value;
-
-                target.commands.add(command);
-            }
-        };
+        return commandDecorator(options) as MethodDecorator;
     }
 
     protected static on(event?: keyof ClientEvents): MethodDecorator {
-        return (target: unknown, key: string, descriptor: PropertyDescriptor) => {
-            if (this.isController(target)) {
-                this.checkInitialization(target);
-                target.client.on(event || key, descriptor.value);
-            }
-        };
-    }
-
-    private static checkInitialization(target: Initializable): void {
-        if (!target.isInitialized) target.initialize();
-    }
-
-    private static isController(target: unknown): target is Bot {
-        return target instanceof Bot;
+        return eventDecorator(event) as MethodDecorator;
     }
 }

@@ -1,3 +1,3 @@
 export * from './commands';
-export * from './interfaces';
+export * from './core';
 export * from './Bot';

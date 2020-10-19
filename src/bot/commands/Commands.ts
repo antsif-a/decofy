@@ -2,9 +2,10 @@ import { Client, Message } from 'discord.js';
 import { Command } from './Command';
 
 export class Commands {
+    public static readonly defaultPrefix = '!';
     private readonly client: Client;
     private readonly commands: Command[];
-    private prefix: string;
+    private prefix: string = Commands.defaultPrefix;
 
     constructor(client: Client) {
         this.client = client;
@@ -16,7 +17,7 @@ export class Commands {
     private handle(message: Message): void {
         const { content, member } = message;
 
-        if (!content.startsWith('-')) return;
+        if (!content.startsWith(/* TODO: Use this.prefix */ '-')) return;
 
         const [commandName, ...args] = content.trim().slice(1).split(/ +/);
         const command = this.find(commandName);
