@@ -8,7 +8,7 @@
         "email": "summet.dev@gmail.com"
     },
     "scripts": {
-        "test": "node dist/examples/index.js",
+        "test": "ts-node ./examples/index.ts",
         "build": "tsc",
         "eslint": "eslint -c .eslintrc.json --ext .ts ./src"
     },
@@ -23,6 +23,7 @@
         "eslint": "^7.8.1",
         "eslint-config-airbnb-typescript": "^10.0.0",
         "eslint-plugin-import": "^2.22.0",
+        "ts-node": "^9.0.0",
         "typescript": "^4.0.2"
     }
 }
