@@ -187,3 +187,6 @@ fabric.properties
 .idea/misc.xml
 .idea/modules.xml
 .idea/discord.xml
+
+# Config file
+examples/config.json

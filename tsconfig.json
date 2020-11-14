@@ -4,6 +4,7 @@
         "outDir": "./dist/",
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
+        "resolveJsonModule": true,
         "module": "commonjs",
         "target": "es6"
     }

@@ -2,6 +2,7 @@
 
 import { Message } from 'discord.js';
 import { Bot } from '../src';
+import { token } from './config.json';
 
 @Bot.bot('$')
 class MyBot extends Bot {
@@ -17,8 +18,8 @@ class MyBot extends Bot {
 
     @Bot.on('ready')
     ready(): void {
-        console.log('Oh god I am alive!');
+        console.log('Bot started.');
     }
 }
 
- new MyBot('token');
+ new MyBot(token);
