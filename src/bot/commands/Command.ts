@@ -5,6 +5,7 @@ export interface CommandOptions {
     description?: string;
     category?: string;
     executor?: CommandExecutor;
+    permissions?: PermissionString[];
 }
 
 export class Command {
@@ -19,7 +20,7 @@ export class Command {
         this.description = options.description;
         this.category = options.category;
         this.executor = options.executor;
-        this.permissions = [];
+        this.permissions = options.permissions;
     }
 
     permission(...permission: PermissionString[]): this {

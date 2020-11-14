@@ -7,13 +7,18 @@ import { token } from './config.json';
 @Bot.bot('$')
 class MyBot extends Bot {
     @Bot.command()
-    ping(message: Message) {
+    ping(message: Message): void {
         void message.channel.send('Pong!');
     }
 
     @Bot.command()
-    say(message: Message, ...words: string[]) {
+    say(message: Message, ...words: string[]): void {
         void message.channel.send(words.join(' '));
+    }
+
+    @Bot.command({ permissions: ['ADMINISTRATOR'] })
+    admin(message: Message): void {
+        void message.channel.send('Done admin action.');
     }
 
     @Bot.on('ready')
