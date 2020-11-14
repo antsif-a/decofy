@@ -29,6 +29,10 @@ export class Commands {
         }
     }
 
+    contains(name: string): boolean {
+        return this.find(name) !== null;
+    }
+
     find(name: string): Command | null {
         const command = this.commands.find((c) => c.name === name);
         return command || null;
