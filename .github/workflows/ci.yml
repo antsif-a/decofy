@@ -26,7 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node_version }}
 
-    - name: npm install and build
+    - name: Compile Typescript
       run: |
         npm install
         npm run build
