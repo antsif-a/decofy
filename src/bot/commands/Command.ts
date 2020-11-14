@@ -14,7 +14,7 @@ export class Command {
     public executor: CommandExecutor;
     private readonly permissions: PermissionString[];
 
-    constructor(options: CommandOptions = {}) {
+    private constructor(options: CommandOptions = {}) {
         this.name = options.name;
         this.description = options.description;
         this.category = options.category;
@@ -40,6 +40,10 @@ export class Command {
 
     execute(message: Message, ...args: string[]): void {
         this.executor(message, ...args);
+    }
+
+    static create(options?: CommandOptions): Command {
+        return new this(options);
     }
 }
 
