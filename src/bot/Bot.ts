@@ -16,14 +16,14 @@ export abstract class Bot extends Controller {
     }
 
     protected static bot(prefix: string): ClassDecorator {
-        return botDecorator(prefix) as ClassDecorator;
+        return botDecorator(prefix);
     }
 
     protected static command(options: CommandOptions = {}): MethodDecorator {
-        return commandDecorator(options) as MethodDecorator;
+        return commandDecorator(options);
     }
 
     protected static on(event?: keyof ClientEvents): MethodDecorator {
-        return eventDecorator(event) as MethodDecorator;
+        return eventDecorator(event);
     }
 }

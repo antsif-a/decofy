@@ -1,9 +1,8 @@
-import { Decorator } from './Decorator';
 import { Command, CommandOptions } from '../bot/commands';
 import { Controller, Initializable } from '../bot/core';
 import { CommandExistsError } from '../bot/errors';
 
-export const commandDecorator = <Decorator> function (options?: CommandOptions) {
+export function commandDecorator(options?: CommandOptions): MethodDecorator {
     return (target: Controller, key: string, descriptor: PropertyDescriptor) => {
         Initializable.checkInitialization(target);
 
@@ -17,4 +16,4 @@ export const commandDecorator = <Decorator> function (options?: CommandOptions) 
 
         target.commands.add(command);
     };
-};
+}
