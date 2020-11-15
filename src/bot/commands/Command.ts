@@ -20,7 +20,7 @@ export class Command {
         this.description = options.description;
         this.category = options.category;
         this.executor = options.executor;
-        this.permissions = options.permissions;
+        this.permissions = options.permissions || [];
     }
 
     permission(...permission: PermissionString[]): this {
