@@ -17,7 +17,7 @@ export class Commands {
     private handle(message: Message): void {
         const { content, member } = message;
 
-        if (!content.startsWith(/* TODO: Use this.prefix */ '-')) return;
+        if (!content.startsWith(this.prefix)) return;
 
         const [commandName, ...args] = content.trim().slice(1).split(/ +/);
         const command = this.find(commandName);
