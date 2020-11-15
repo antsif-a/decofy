@@ -114,6 +114,8 @@ dist
 .yarn/build-state.yml
 .pnp.*
 
+.idea
+
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
