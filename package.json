@@ -7,6 +7,15 @@
         "url": "https://github.com/summetdev",
         "email": "summet.dev@gmail.com"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/summetdev/DiscordDecorate.git"
+    },
+    "bugs": {
+        "url": "http://github.com/summetdev/DiscordDecorate/issues",
+        "email": "summet.dev@gmail.com"
+    },
+    "homepage": "https://github.com/summetdev/DiscordDecorate#readme",
     "scripts": {
         "test": "ts-node ./examples/index.ts",
         "build": "tsc",
