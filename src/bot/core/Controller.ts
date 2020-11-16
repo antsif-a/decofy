@@ -7,6 +7,6 @@ export abstract class Controller extends Initializable {
     commands: Commands;
 
     public static isController(target: unknown): target is Controller {
-        return target instanceof Controller || (target as Function).prototype instanceof Controller;
+        return target instanceof Controller;
     }
 }
