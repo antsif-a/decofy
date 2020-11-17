@@ -1,5 +1,5 @@
 {
-    "name": "discord-decorate",
+    "name": "decofy",
     "description": "Create your own Discord bot using TypeScript decorators!",
     "version": "0.0.1",
     "license": "MIT",
@@ -33,12 +33,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/summetdev/DiscordDecorate.git"
+        "url": "https://github.com/summetdev/decofy.git"
     },
     "bugs": {
-        "url": "http://github.com/summetdev/DiscordDecorate/issues",
+        "url": "http://github.com/summetdev/decofy/issues",
         "email": "summet.dev@gmail.com"
     },
-    "homepage": "https://github.com/summetdev/DiscordDecorate#readme",
+    "homepage": "https://github.com/summetdev/decofy#readme",
     "keywords": ["typescript", "discord", "decorators", "bot"]
 }
