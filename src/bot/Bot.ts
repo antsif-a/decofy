@@ -1,7 +1,7 @@
 import { Client, ClientEvents } from 'discord.js';
 import { CommandOptions, Commands } from './commands';
 import { Controller } from './core';
-import { botDecorator, commandDecorator, eventDecorator } from '../decorators';
+import { prefixDecorator, commandDecorator, eventDecorator } from '../decorators';
 
 export abstract class Bot extends Controller {
     constructor(token: string) {
@@ -15,8 +15,8 @@ export abstract class Bot extends Controller {
         this.isInitialized = true;
     }
 
-    protected static bot(prefix: string): ClassDecorator {
-        return botDecorator(prefix);
+    protected static prefix(prefix: string): ClassDecorator {
+        return prefixDecorator(prefix);
     }
 
     protected static command(options: CommandOptions = {}): MethodDecorator {

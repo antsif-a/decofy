@@ -4,7 +4,7 @@ import { Message } from 'discord.js';
 import { Bot } from '../src';
 import { token } from './config.json';
 
-@Bot.bot('$')
+@Bot.prefix('$')
 class MyBot extends Bot {
     @Bot.command()
     ping(message: Message): void {
