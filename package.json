@@ -5,7 +5,9 @@
     "license": "MIT",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
-    "files": ["dist/**/*"],
+    "files": [
+        "dist/**/*"
+    ],
     "author": {
         "name": "Andrew Antsiferov",
         "url": "https://github.com/summetdev",
@@ -40,5 +42,10 @@
         "email": "summet.dev@gmail.com"
     },
     "homepage": "https://github.com/summetdev/decofy#readme",
-    "keywords": ["typescript", "discord", "decorators", "bot"]
+    "keywords": [
+        "typescript",
+        "discord",
+        "decorators",
+        "bot"
+    ]
 }

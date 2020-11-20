@@ -1,7 +1,12 @@
-import { Client, ClientEvents } from 'discord.js';
+import { Client, ClientEvents, ClientOptions } from 'discord.js';
 import { CommandOptions, Commands } from './commands';
 import { Controller } from './core';
-import { prefixDecorator, commandDecorator, eventDecorator } from '../decorators';
+import {
+    optionsDecorator,
+    prefixDecorator,
+    commandDecorator,
+    eventDecorator,
+} from '../decorators';
 
 export abstract class Bot extends Controller {
     constructor(token: string) {
@@ -10,13 +15,17 @@ export abstract class Bot extends Controller {
     }
 
     initialize(): void {
+        super.initialize();
         this.client = new Client();
         this.commands = new Commands(this.client);
-        this.isInitialized = true;
     }
 
     protected static prefix(prefix: string): ClassDecorator {
         return prefixDecorator(prefix);
+    }
+
+    protected static options(options: ClientOptions): ClassDecorator {
+        return optionsDecorator(options);
     }
 
     protected static command(options: CommandOptions = {}): MethodDecorator {

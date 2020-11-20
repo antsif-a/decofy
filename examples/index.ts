@@ -4,6 +4,7 @@ import { Message } from 'discord.js';
 import { Bot } from '../src';
 import { token } from './config.json';
 
+@Bot.options({ disableMentions: 'all' })
 @Bot.prefix('$')
 class MyBot extends Bot {
     @Bot.command()
@@ -27,4 +28,4 @@ class MyBot extends Bot {
     }
 }
 
- new MyBot(token);
+new MyBot(token);
