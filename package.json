@@ -16,19 +16,22 @@
     "scripts": {
         "build": "yarn install && yarn compile",
         "compile": "tsc",
-        "test": "ts-node ./examples/index.ts",
+        "test": "jest",
+        "test:examples": "ts-node ./examples/index.ts",
         "eslint": "eslint ."
     },
     "dependencies": {
         "discord.js": "^12.3.1"
     },
     "devDependencies": {
+        "@types/jest": "^26.0.15",
         "@types/node": "^14.6.3",
         "@typescript-eslint/eslint-plugin": "^4.1.1",
         "@typescript-eslint/parser": "^4.0.1",
         "eslint": "^7.8.1",
         "eslint-config-airbnb-typescript": "^10.0.0",
         "eslint-plugin-import": "^2.22.0",
+        "jest": "^26.6.3",
         "ts-node": "^9.0.0",
         "typescript": "^4.0.2",
         "yarn": "^1.22.10"
