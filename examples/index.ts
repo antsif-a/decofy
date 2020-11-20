@@ -4,7 +4,7 @@ import { Message } from 'discord.js';
 import { Bot } from '../src';
 import { token } from './config.json';
 
-@Bot.options({ disableMentions: 'all' })
+@Bot.status('idle')
 @Bot.prefix('$')
 class MyBot extends Bot {
     @Bot.command()

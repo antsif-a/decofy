@@ -1,5 +1,5 @@
 import { ClientOptions } from 'discord.js';
-import { Controller } from '../bot/core';
+import { Controller } from '../../bot/core';
 
 export function optionsDecorator(options: ClientOptions): ClassDecorator {
     return <T extends Function>(target: T) => {

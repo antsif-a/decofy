@@ -14,8 +14,8 @@
         "email": "summet.dev@gmail.com"
     },
     "scripts": {
-        "build": "yarn install && yarn compile",
-        "compile": "tsc",
+        "build": "yarn install && yarn build:tsc",
+        "build:tsc": "tsc",
         "test": "jest",
         "test:examples": "ts-node ./examples/index.ts",
         "eslint": "eslint ."

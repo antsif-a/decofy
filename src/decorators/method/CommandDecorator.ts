@@ -1,6 +1,6 @@
-import { Command, CommandOptions } from '../bot/commands';
-import { Controller, Initializable } from '../bot/core';
-import { CommandExistsError } from '../bot/errors';
+import { Command, CommandOptions } from '../../bot/commands';
+import { Controller, Initializable } from '../../bot/core';
+import { CommandExistsError } from '../../bot/errors';
 
 export function commandDecorator(options?: CommandOptions): MethodDecorator {
     return (target: unknown, key: string, descriptor: PropertyDescriptor) => {

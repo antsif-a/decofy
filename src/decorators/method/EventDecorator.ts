@@ -1,5 +1,5 @@
 import { ClientEvents } from 'discord.js';
-import { Controller, Initializable } from '../bot/core';
+import { Controller, Initializable } from '../../bot/core';
 
 export function eventDecorator(event?: keyof ClientEvents): MethodDecorator {
     return (target: unknown, key: string, descriptor: PropertyDescriptor) => {

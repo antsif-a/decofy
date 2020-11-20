@@ -1,4 +1,4 @@
-import { Controller } from '../bot/core';
+import { Controller } from '../../bot/core';
 
 export function prefixDecorator(prefix: string): ClassDecorator {
     return <T extends Function>(target: T) => {
