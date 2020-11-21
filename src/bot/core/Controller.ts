@@ -2,7 +2,8 @@ import { Client, ClientOptions, Util } from 'discord.js';
 import { Commands } from '../commands';
 import { Initializable } from './Initializable';
 
-export abstract class Controller extends Initializable {
+export abstract class Controller implements Initializable {
+    isInitialized: boolean;
     client: Client;
     commands: Commands;
 
@@ -12,9 +13,5 @@ export abstract class Controller extends Initializable {
 
     setOptions(options: ClientOptions): void {
         this.client.options = Util.mergeDefault(this.client.options, options);
-    }
-
-    public static isController(target: unknown): target is Controller {
-        return target instanceof Controller;
     }
 }

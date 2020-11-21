@@ -1,9 +1,5 @@
-export abstract class Initializable {
-    isInitialized = false;
+export interface Initializable {
+    isInitialized: boolean;
 
-    abstract initialize(): void;
-
-    public static checkInitialization(target: Initializable): void {
-        if (!target.isInitialized) target.initialize();
-    }
+    initialize(): void;
 }

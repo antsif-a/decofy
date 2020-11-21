@@ -1,10 +1,10 @@
 import { ClientEvents } from 'discord.js';
-import { Controller, Initializable } from '../../bot/core';
+import { Structs } from '../../util';
 
 export function eventDecorator(event?: keyof ClientEvents): MethodDecorator {
     return (target: unknown, key: string, descriptor: PropertyDescriptor) => {
-        if (Controller.isController(target)) {
-            Initializable.checkInitialization(target);
+        if (Structs.isController(target)) {
+            Structs.checkInitialization(target);
             target.client.on(event || key, descriptor.value);
         }
 

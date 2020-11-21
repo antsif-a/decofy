@@ -1,8 +1,8 @@
-import { Controller } from '../../bot/core';
+import { Structs } from '../../util';
 
 export function prefixDecorator(prefix: string): ClassDecorator {
     return <T extends Function>(target: T) => {
-        if (Controller.isController(target.prototype)) {
+        if (Structs.isController(target.prototype)) {
             target.prototype.commands.setPrefix(prefix);
         }
 
