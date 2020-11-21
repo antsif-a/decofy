@@ -1,5 +1,5 @@
 import { Command, CommandOptions } from '../../bot/commands';
-import { CommandExistsError } from '../../bot/errors';
+import { CommandExistsError } from '../../errors';
 import { Structs } from '../../util';
 
 export function commandDecorator(options?: CommandOptions): MethodDecorator {
