@@ -1,2 +1,1 @@
 // TODO: Tests
-test('index', () => {});
