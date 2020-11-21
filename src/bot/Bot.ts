@@ -17,9 +17,13 @@ import {
 } from '../decorators';
 
 export abstract class Bot extends Controller {
-    constructor(token: string) {
+    constructor(token: string, login = true) {
         super();
-        void this.client.login(token);
+        this.client.token = token;
+
+        if (login) {
+            void this.client.login();
+        }
     }
 
     initialize(): void {
