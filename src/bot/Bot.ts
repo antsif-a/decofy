@@ -5,16 +5,15 @@ import {
     ClientOptions,
     PresenceStatusData,
 } from 'discord.js';
-import { CommandOptions, Commands } from './commands';
-import { Controller } from './core';
-import {
-    optionsDecorator,
-    prefixDecorator,
-    commandDecorator,
-    eventDecorator,
-    statusDecorator,
-    activityDecorator,
-} from '../decorators';
+import { CommandOptions } from 'bot/commands/Command';
+import { Commands } from 'bot/commands/Commands';
+import { Controller } from 'bot/core/Controller';
+import { prefixDecorator } from '../decorators/class/PrefixDecorator';
+import { optionsDecorator } from '../decorators/class/OptionsDecorator';
+import { activityDecorator } from '../decorators/class/ActivityDecorator';
+import { statusDecorator } from '../decorators/class/StatusDecorator';
+import { commandDecorator } from '../decorators/method/CommandDecorator';
+import { eventDecorator } from '../decorators/method/EventDecorator';
 
 export abstract class Bot extends Controller {
     constructor(token: string, login = true) {

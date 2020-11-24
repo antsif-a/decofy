@@ -1,5 +1,5 @@
 import { Client } from 'discord.js';
-import { Commands } from '../commands';
+import { Commands } from 'bot/commands/Commands';
 import { Initializable } from './Initializable';
 
 export abstract class Controller implements Initializable {

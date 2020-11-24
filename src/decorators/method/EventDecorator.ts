@@ -1,5 +1,5 @@
 import { ClientEvents } from 'discord.js';
-import { Structs } from '../../util';
+import { Structs } from 'util/Structs';
 
 export function eventDecorator(event?: keyof ClientEvents): MethodDecorator {
     return (target: unknown, key: string, descriptor: PropertyDescriptor) => {

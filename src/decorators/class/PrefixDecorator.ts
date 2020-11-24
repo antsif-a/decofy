@@ -1,4 +1,4 @@
-import { Structs } from '../../util';
+import { Structs } from 'util/Structs';
 
 export function prefixDecorator(prefix: string): ClassDecorator {
     return <T extends Function>(target: T) => {
