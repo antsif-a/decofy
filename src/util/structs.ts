@@ -1,5 +1,5 @@
-import { Controller } from '../bot/core/controller';
-import { Initializable } from '../bot/core/initializable';
+import { Controller } from 'base/structs/controller';
+import { Initializable } from 'base/structs/initializable';
 
 export class Structs {
     public static isController(target: unknown): target is Controller {

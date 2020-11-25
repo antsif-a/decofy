@@ -1,4 +1,4 @@
-import { Command, CommandOptions } from 'bot/commands/command';
+import { Command, CommandOptions } from 'base/structs/command';
 import { Structs } from 'util/structs';
 
 export function commandDecorator(options?: CommandOptions): MethodDecorator {

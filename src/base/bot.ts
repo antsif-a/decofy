@@ -5,9 +5,9 @@ import {
     ClientOptions,
     PresenceStatusData,
 } from 'discord.js';
-import { CommandOptions } from 'bot/commands/command';
-import { Commands } from 'bot/commands/commands';
-import { Controller } from 'bot/core/controller';
+import { CommandOptions } from 'base/structs/command';
+import { Commands } from 'base/structs/commands';
+import { Controller } from 'base/structs/controller';
 import { prefixDecorator } from 'decorators/class/prefixDecorator';
 import { optionsDecorator } from 'decorators/class/optionsDecorator';
 import { activityDecorator } from 'decorators/class/activityDecorator';
