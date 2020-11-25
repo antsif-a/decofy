@@ -16,9 +16,10 @@
     "scripts": {
         "build": "yarn install && yarn build:tsc",
         "build:tsc": "tsc",
+        "build:publish": "yarn build && npm publish",
         "test": "jest",
-        "test:examples": "yarn env:src ts-node ./examples/index.ts",
-        "env:src": "cross-env NODE_PATH=./src",
+        "test:examples": "yarn env ts-node ./examples/index.ts",
+        "env": "cross-env NODE_PATH=./src",
         "eslint": "eslint ."
     },
     "dependencies": {
