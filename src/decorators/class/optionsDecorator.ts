@@ -3,7 +3,7 @@ import { Structs } from 'util/structs';
 
 export function optionsDecorator(options: ClientOptions): ClassDecorator {
     return <T extends Function>(target: T) => {
-        if (Structs.isController(target.prototype)) {
+        if (Structs.isBot(target.prototype)) {
             const { client } = target.prototype;
             client.options = Util.mergeDefault(client.options, options);
         }

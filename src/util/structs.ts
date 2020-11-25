@@ -1,12 +1,12 @@
-import { Controller } from 'base/structs/controller';
 import { Initializable } from 'base/structs/initializable';
+import { Bot } from 'base/bot';
 
 export class Structs {
-    public static isController(target: unknown): target is Controller {
-        return target instanceof Controller;
+    public static isBot(target: unknown): target is Bot {
+        return target instanceof Bot;
     }
 
-    public static checkInitialization(target: Initializable): void {
+    public static requireInit(target: Initializable): void {
         if (!target.isInitialized) target.initialize();
     }
 }

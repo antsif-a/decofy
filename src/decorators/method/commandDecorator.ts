@@ -3,8 +3,8 @@ import { Structs } from 'util/structs';
 
 export function commandDecorator(options?: CommandOptions): MethodDecorator {
     return (target: unknown, key: string, descriptor: PropertyDescriptor) => {
-        if (Structs.isController(target)) {
-            Structs.checkInitialization(target);
+        if (Structs.isBot(target)) {
+            Structs.requireInit(target);
 
             const command = Command.create(options);
             command.name ||= key;
