@@ -1,5 +1,5 @@
 import { ClientOptions, Util } from 'discord.js';
-import { Structs } from 'util/Structs';
+import { Structs } from 'util/structs';
 
 export function optionsDecorator(options: ClientOptions): ClassDecorator {
     return <T extends Function>(target: T) => {

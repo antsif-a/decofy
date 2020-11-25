@@ -1,5 +1,5 @@
 import { Client, Message } from 'discord.js';
-import { Command } from 'bot/commands/Command';
+import { Command } from 'bot/commands/command';
 
 export class Commands {
     public static readonly defaultPrefix = '!';

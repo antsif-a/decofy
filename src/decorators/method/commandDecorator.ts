@@ -1,6 +1,5 @@
-import { Command, CommandOptions } from 'bot/commands/Command';
-import { Structs } from 'util/Structs';
-import { CommandExistsError } from 'errors/CommandExistsError';
+import { Command, CommandOptions } from 'bot/commands/command';
+import { Structs } from 'util/structs';
 
 export function commandDecorator(options?: CommandOptions): MethodDecorator {
     return (target: unknown, key: string, descriptor: PropertyDescriptor) => {
@@ -12,7 +11,7 @@ export function commandDecorator(options?: CommandOptions): MethodDecorator {
             command.executor ||= descriptor.value;
 
             if (target.commands.contains(command.name)) {
-                throw new CommandExistsError(key);
+                throw new Error(`Command with name '${command.name}' already exists.`);
             }
 
             target.commands.add(command);

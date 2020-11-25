@@ -1,6 +1,6 @@
 import { Client } from 'discord.js';
-import { Commands } from 'bot/commands/Commands';
-import { Initializable } from 'bot/core/Initializable';
+import { Commands } from 'bot/commands/commands';
+import { Initializable } from 'bot/core/initializable';
 
 export abstract class Controller implements Initializable {
     isInitialized: boolean;
